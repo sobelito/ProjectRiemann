@@ -66,7 +66,7 @@
 
       for (i = 0; i < lop.length; i++) {
         //setTimeout(function () {
-          $("#portrait").append("<div style='padding-left:" + lop[i] - ((i==0) ? 0 : lop[i-1]) + "px;'></div>");
+          $("#portrait").append("<div style='padding-left:" + (lop[i] - ((i==0) ? 0 : lop[i-1])) + "px;'></div>");
         //}, i * 10);
 
       }
