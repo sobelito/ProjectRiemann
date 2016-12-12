@@ -68,6 +68,10 @@
       for (i = 0; i < lop.length; i++) {
         (function (diff) {
           setTimeout(function (i) {
+            if (i == lop.length - 1) {
+              //if last restart
+              location = location;
+            }
             $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
             $("html, body").animate({ scrollTop: $(document).height() }, 0);
           }, delay);
