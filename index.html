@@ -64,7 +64,9 @@
       //$("#portrait").append("<div style='padding-left:1px;'></div>");
       //$("#portrait").append("<div style='padding-left:2px;'></div>");
 
-      $('#options').popup();
+      $('#options').popup({
+        focuselement: '#play',
+      });
       $('#options').popup('show');
 
       $("#play").click(function () {
