@@ -66,8 +66,8 @@
 
       var delay = 0;
       for (i = 0; i < lop.length; i++) {
-        (function (diff, value) {
-          setTimeout(function (i) {
+        (function (diff, value, i) {
+          setTimeout(function () {
             //if (i == lop.length - 1) {
             //  //if last restart
             //  location = location;
@@ -75,7 +75,7 @@
             $("#portrait").append("<div title='" + value + "' style='padding-left:" + diff + "px;'></div>");
             $("html, body").animate({ scrollTop: $(document).height() }, 0);
           }, delay);
-        })((lop[i] - ((i == 0) ? 0 : lop[i - 1])), lop[i]);
+        })((lop[i] - ((i == 0) ? 0 : lop[i - 1])), lop[i], i);
         delay += 2;
       }
 
