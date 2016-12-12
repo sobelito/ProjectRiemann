@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="description" content='Artistic Exploration of Primes'>
   <meta name="keywords" content="">
-  <meta http-equiv="refresh" content="15">
+  <!--<meta http-equiv="refresh" content="15">-->
   <title>Artistic Exploration of Primes | Project Riemann</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -14,6 +14,7 @@
           crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="10000.js"></script>
   <!-- Favicon HERE -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<script>
@@ -29,19 +30,55 @@
   </script>-->
 
   <style>
+    html {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+    }
 
+    #portrait {
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      background-color: greenyellow;
+      position: absolute;
+    }
 
+      #portrait div {
+        width: 0;
+        height: 100%;
+        border: 0px none;
+        border-right: 1px black solid;
+        display: inline-block;
+      }
   </style>
-</head>
-<body>
-  <div id="portrait">
-    
-  </div>
   <script type="text/javascript">
     $(function () {
-      
+      toastr.info(lop.length + " primes");
+      //2,3,5
+      var last = 0;
+      //$("#portrait").append("<div style='padding-left:2px;'></div>");
+      //$("#portrait").append("<div style='padding-left:1px;'></div>");
+      //$("#portrait").append("<div style='padding-left:2px;'></div>");
+
+      for (i = 0; i < lop.length; i++) {
+        //$("#portrait").append("<div></div>");
+        var diff = lop[i] - last;
+        $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
+        last = lop[i];
+      }
+
+      //for each p add a div
+      //for each d append a div with width=0, border right=1, solid, black, and margin left current minus last
+
 
     });
   </script>
+</head>
+<body>
+  <div id="portrait">
+  </div>
 </body>
 </html>
