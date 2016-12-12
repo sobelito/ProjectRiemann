@@ -78,20 +78,24 @@
               //  //if last restart
               //  location = location;
               //}
+              //data-toggle='tooltip' 
               $("#portrait").append("<div title='" + value + "' style='padding-left:" + diff + "px;'></div>");
               $("html, body").animate({ scrollTop: $(document).height() }, 0);
             }, delay);
           })((lop[i] - ((i == 0) ? 0 : lop[i - 1])), lop[i], i);
           delay += 2;
         }
+        //$('[data-toggle="tooltip"]').tooltip();
       });
       $("#load").click(function () {
         $('#options').popup('hide');
         var lop = ($("#numOfPrimes option:selected").val() == 0) ? lop10K : lop1M;
         for (i = 0; i < lop.length; i++) {
           var diff = lop[i] - ((i == 0) ? 0 : lop[i - 1]);
+          //data-toggle='tooltip' 
           $("#portrait").append("<div title='" + lop[i] + "' style='padding-left:" + diff + "px;'></div>");
         }
+        //$('[data-toggle="tooltip"]').tooltip();
       });
     });
   </script>
