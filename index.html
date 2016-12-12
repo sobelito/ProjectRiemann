@@ -69,6 +69,7 @@
         (function (diff) {
           setTimeout(function (i) {
             $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
+            $("html, body").animate({ scrollTop: $(document).height() }, 0);
           }, delay);
         })(lop[i] - ((i == 0) ? 0 : lop[i - 1]));
         delay+= 10;
