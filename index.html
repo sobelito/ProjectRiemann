@@ -66,24 +66,25 @@
 
       var delay = 0;
       for (i = 0; i < lop.length; i++) {
-        (function (diff) {
+        (function (diff, value) {
           setTimeout(function (i) {
-            if (i == lop.length - 1) {
-              //if last restart
-              location = location;
-            }
-            $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
+            //if (i == lop.length - 1) {
+            //  //if last restart
+            //  location = location;
+            //}
+            $("#portrait").append("<div title='" + value + "' style='padding-left:" + diff + "px;'></div>");
             $("html, body").animate({ scrollTop: $(document).height() }, 0);
           }, delay);
-        })(lop[i] - ((i == 0) ? 0 : lop[i - 1]));
-        delay+= 5;
+        })((lop[i] - ((i == 0) ? 0 : lop[i - 1])), lop[i]);
+        delay += 2;
       }
 
       //why break, is that cool?
       //more primes?
       //just dd to body?
       //draw and insert timeouts?
-
+      //add stop button, that tells you current number?
+      //add line alt for number
     });
   </script>
 </head>
