@@ -78,7 +78,7 @@
               //  //if last restart
               //  location = location;
               //}
-              //data-toggle='tooltip' 
+              //data-toggle='tooltip'
               $("#portrait").append("<div title='" + value + "' style='padding-left:" + diff + "px;'></div>");
               $("html, body").animate({ scrollTop: $(document).height() }, 0);
             }, delay);
@@ -92,7 +92,7 @@
         var lop = ($("#numOfPrimes option:selected").val() == 0) ? lop10K : lop1M;
         for (i = 0; i < lop.length; i++) {
           var diff = lop[i] - ((i == 0) ? 0 : lop[i - 1]);
-          //data-toggle='tooltip' 
+          //data-toggle='tooltip'
           $("#portrait").append("<div title='" + lop[i] + "' style='padding-left:" + diff + "px;'></div>");
         }
         //$('[data-toggle="tooltip"]').tooltip();
@@ -109,7 +109,7 @@
       <br />
       <label>Number of primes:</label>
       <br />
-      <select id="numOfPrimes" class="form-control text-center">
+      <select id="numOfPrimes" class="form-control text-center" style="text-align:center;">
         <option value="0" selected>10,000</option>
         <option value="1">1,000,000</option>
       </select>
