@@ -65,11 +65,10 @@
       //$("#portrait").append("<div style='padding-left:2px;'></div>");
 
       for (i = 0; i < lop.length; i++) {
-        setTimeout(function () {
-          var diff = lop[i] - last;
-          $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
-          last = lop[i];
-        }, i * 10);
+        //setTimeout(function () {
+          $("#portrait").append("<div style='padding-left:" + lop[i] - ((i=0) ? 0 : lop[i-1]) + "px;'></div>");
+        //}, i * 10);
+
       }
 
       //why break, is that cool?
