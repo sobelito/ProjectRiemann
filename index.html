@@ -64,11 +64,14 @@
       //$("#portrait").append("<div style='padding-left:1px;'></div>");
       //$("#portrait").append("<div style='padding-left:2px;'></div>");
 
+      var delay = 0;
       for (i = 0; i < lop.length; i++) {
-        //setTimeout(function () {
-          $("#portrait").append("<div style='padding-left:" + (lop[i] - ((i==0) ? 0 : lop[i-1])) + "px;'></div>");
-        //}, i * 10);
-
+        (function (diff) {
+          setTimeout(function (i) {
+            $("#portrait").append("<div style='padding-left:" + diff + "px;'></div>");
+          }, delay);
+        })(lop[i] - ((i == 0) ? 0 : lop[i - 1]));
+        delay+= 10;
       }
 
       //why break, is that cool?
